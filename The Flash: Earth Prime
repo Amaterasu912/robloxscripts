@@ -1,0 +1,122 @@
+--[[
+
+
+Terrible script, ignore the horrendous code if you continue.
+
+
+]]--
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+local p = game:GetService("Players")
+local lp = p.LocalPlayer
+local pg = lp.PlayerGui
+local ps = lp.PlayerScripts
+
+local lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/GreenDeno/Venyx-UI-Library/main/source.lua"))()
+local main = lib.new("The Flash", 5013109572)
+
+main:Notify("Notice", "This was created on game version ".. pg.Version.TextLabel.Text)
+
+local themes = {
+    Background = Color3.fromRGB(24, 24, 24),
+    Glow = Color3.fromRGB(0, 0, 0),
+    Accent = Color3.fromRGB(10, 10, 10),
+    LightContrast = Color3.fromRGB(20, 20, 20),
+    DarkContrast = Color3.fromRGB(14, 14, 14),  
+    TextColor = Color3.fromRGB(255, 255, 255)
+}
+
+
+
+local page1 = main:addPage("Main", 5012544693)
+local page1section1 = page1:addSection("Enable")
+local page1section2 = page1:addSection("Disable")
+local page1section3 = page1:addSection("Extra")
+
+page1section1:addButton("Enable VibeList", function()
+    pg.VibeList.Enabled = true
+end)
+
+page1section1:addButton("Enable Kryptonian", function()
+    pg.kryptonianGui.Enabled = true
+end)
+
+page1section1:addButton("Enable Atom", function()
+    pg.AtomScreen.Enabled = true
+end)
+
+page1section1:addButton("Enable Speed", function()
+    pg.SpeedGui.Enabled = true
+end)
+
+page1section2:addButton("Disable VibeList", function()
+    pg.VibeList.Enabled = false
+end)
+
+page1section2:addButton("Disable Kryptonian", function()
+    pg.kryptonianGui.Enabled = false
+end)
+
+page1section2:addButton("Disable Atom", function()
+    pg.AtomScreen.Enabled = false
+end)
+
+page1section2:addButton("Disable Speed", function()
+    pg.SpeedGui.Enabled = false
+end)
+
+page1section3:addButton("Remove weather", function()
+    ps.WeatherControlLocal:Destroy()
+end)
+
+page1section3:addButton("Infinite boost (thanks Linen)", function()
+    local suc,err = pcall(function()
+    local plr = game:GetService"Players".LocalPlayer;
+    local plrgui = plr:WaitForChild("PlayerGui")
+    local mainscript = getsenv(plrgui.SpeedGui.SpeedChange)
+    local func = mainscript.speedIncr
+    debug.setupvalue(func,3,true)
+    end)
+    if not suc then warn("script err: "..tostring(err))end
+end)
