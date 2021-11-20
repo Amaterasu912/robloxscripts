@@ -1,0 +1,84 @@
+--[[
+
+You can reduce the wait in the tweens to find the perfect wait time but if you go office to office to quick they ban you.
+
+]]--
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/GreenDeno/Venyx-UI-Library/main/source.lua"))()
+local venyx = library.new("Force", 5013109572)
+
+local themes = {
+Background = Color3.fromRGB(24, 24, 24),
+Glow = Color3.fromRGB(0, 0, 0),
+Accent = Color3.fromRGB(10, 10, 10),
+LightContrast = Color3.fromRGB(20, 20, 20),
+DarkContrast = Color3.fromRGB(14, 14, 14),  
+TextColor = Color3.fromRGB(255, 255, 255)
+}
+
+local p = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
+local ts = game:GetService("TweenService")
+local ti = TweenInfo.new(0.2, Enum.EasingStyle.Linear)
+local page = venyx:addPage("Main", 5012544693)
+local section1 = page:addSection("Section 1")
+local relso = CFrame.new(1018.53497, 1649.00476, 1801.11475)
+local relsotp = {CFrame = relso}
+local swamp = CFrame.new(-1777.58484, 1652.87781, 531.191345)
+local swamptp = {CFrame = swamp}
+local spawn = CFrame.new(109.750015, 1759.29395, -56.6634674)
+local spawntp = {CFrame = spawn}
+
+section1:addButton("Relso Office", function()
+    print'dont remove the wait its preventing a ban.'
+    wait(20)
+    ts:Create(p, ti, relsotp):Play()
+end)
+
+section1:addButton("Swamp Office", function()
+    print'dont remove the wait its preventing a ban.'
+    wait(20)
+    ts:Create(p, ti, swamptp):Play()
+end)
+
+section1:addButton("Spawn Office", function()
+    print'dont remove the wait its preventing a ban.'
+    wait(20)
+    ts:Create(p, ti, spawntp):Play()
+end)
+
+section1:addButton("Collect Trinkets (thanks gor skills)", function()
+    for i,v in pairs(game.Workspace.Scraps:GetChildren()) do
+       if v:IsA("UnionOperation") or v:IsA("MeshPart") and v.ClickBox then
+           fireclickdetector(v.ClickBox.ClickDetector)
+       end
+    end
+
+    for i,v in pairs(game.Workspace.Ingredients:GetChildren()) do
+       if v.Name == "Carami Flower" or v.Name == "Lon Flower" or v.Name == "Hora Flower" or v.Name == "Charim Flower" and v.ClickBox then
+           fireclickdetector(v.ClickBox.ClickDetector)
+       end
+    end
+end)
+
+venyx:SelectPage(venyx.pages[1], true)
