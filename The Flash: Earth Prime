@@ -48,6 +48,24 @@ Terrible script, ignore the horrendous code if you continue.
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 local p = game:GetService("Players")
 local lp = p.LocalPlayer
 local pg = lp.PlayerGui
@@ -119,4 +137,8 @@ page1section3:addButton("Infinite boost (thanks Linen)", function()
     debug.setupvalue(func,3,true)
     end)
     if not suc then warn("script err: "..tostring(err))end
+end)
+
+page1section3:addButton("Redeem codes", function()
+    game:GetService("ReplicatedStorage").PlayerRemotes.EnterCode:InvokeServer("Blackrypt")
 end)
