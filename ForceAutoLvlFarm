@@ -1,0 +1,98 @@
+--[[
+
+
+Terrible script, ignore the horrendous code if you continue.
+
+
+]]--
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+local AkaliNotif = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/Dynissimo/main/Scripts/AkaliNotif.lua"))();
+local Notify = AkaliNotif.Notify;
+local uis = game:GetService("UserInputService")
+local ts = game:GetService("TeleportService")
+local lp = game:GetService("Players").LocalPlayer
+
+wait(1);
+if game.PlaceId == 7719700868 then
+    Notify({
+    Description = "Press Y key to begin autofarm.";
+    Title = "Notice";
+    Duration = 10;
+    });
+end
+
+uis.InputBegan:connect(function(Input)
+    if Input.KeyCode == Enum.KeyCode.Y then
+        ts:Teleport(7203983633, lp)
+    end
+end)
+
+if game.PlaceId == 7203983633 then
+    ts:Teleport(game.PlaceId, lp)
+    for i,v in pairs(game:GetDescendants()) do
+         if v:IsA("ClickDetector") then
+             fireclickdetector(v)
+         end
+    end
+end
