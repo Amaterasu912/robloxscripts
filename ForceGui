@@ -67,7 +67,7 @@ section1:addButton("Spawn Office", function()
 end)
 
 section1:addButton("Skip intro", function()
-    
+    game:GetService("ReplicatedStorage").Requests.Finalize:FireServer()
 end)
 
 section1:addButton("TP to Logos Pain", function()
@@ -75,7 +75,7 @@ section1:addButton("TP to Logos Pain", function()
 end)
 
 section1:addButton("TP to main game", function()
-    tps:Teleport(719700868, lp)
+    tps:Teleport(7719700868, lp)
 end)
 
 section1:addButton("Change server", function()
