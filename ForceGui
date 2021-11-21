@@ -39,6 +39,8 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 local p = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
 local ts = game:GetService("TweenService")
+local tps = game:GetService("TeleportService")
+local lp = game:GetService("Players").LocalPlayer
 local ti = TweenInfo.new(0.2, Enum.EasingStyle.Linear)
 local page = venyx:addPage("Main", 5012544693)
 local section1 = page:addSection("Section 1")
@@ -50,34 +52,42 @@ local spawn = CFrame.new(109.750015, 1759.29395, -56.6634674)
 local spawntp = {CFrame = spawn}
 
 section1:addButton("Relso Office", function()
-    print'dont remove the wait its preventing a ban.'
-    wait(20)
+    wait(15)
     ts:Create(p, ti, relsotp):Play()
 end)
 
 section1:addButton("Swamp Office", function()
-    print'dont remove the wait its preventing a ban.'
-    wait(20)
+    wait(15)
     ts:Create(p, ti, swamptp):Play()
 end)
 
 section1:addButton("Spawn Office", function()
-    print'dont remove the wait its preventing a ban.'
-    wait(20)
+    wait(15)
     ts:Create(p, ti, spawntp):Play()
 end)
 
-section1:addButton("Collect Trinkets (thanks gor skills)", function()
-    for i,v in pairs(game.Workspace.Scraps:GetChildren()) do
-       if v:IsA("UnionOperation") or v:IsA("MeshPart") and v.ClickBox then
-           fireclickdetector(v.ClickBox.ClickDetector)
-       end
-    end
+section1:addButton("Skip intro", function()
+    
+end)
 
-    for i,v in pairs(game.Workspace.Ingredients:GetChildren()) do
-       if v.Name == "Carami Flower" or v.Name == "Lon Flower" or v.Name == "Hora Flower" or v.Name == "Charim Flower" and v.ClickBox then
-           fireclickdetector(v.ClickBox.ClickDetector)
-       end
+section1:addButton("TP to Logos Pain", function()
+    tps:Teleport(7203983633, lp)
+end)
+
+section1:addButton("TP to main game", function()
+    tps:Teleport(719700868, lp)
+end)
+
+section1:addButton("Change server", function()
+    tps:Teleport(game.PlaceId, lp)
+end)
+
+section1:addButton("Level up (logos pain only)", function()
+    ts:Teleport(game.PlaceId, lp)
+    for i,v in pairs(game:GetDescendants()) do
+         if v:IsA("ClickDetector") then
+             fireclickdetector(v)
+         end
     end
 end)
 
